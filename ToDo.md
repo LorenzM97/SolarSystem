@@ -1,14 +1,12 @@
 # Front-End
-  - [ ] WPF
-  - [ ] ASP.NET Web Application ??
+	- [ ] WPF
 
 # Back-End
- - [ ] virtual Server aufsetzen @LorenzM97
+	- [ ] virtual Server aufsetzen
 	- [ ] ASP.NET
 
 # Data exchanging
-  - [ ] JSON
+	- [ ] JSON
   
 ## Helpful Links
-  - Dateien wie diese [formatieren](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text)
-  - Test zum comitten
+	- Dateien wie diese [formatieren](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text)
