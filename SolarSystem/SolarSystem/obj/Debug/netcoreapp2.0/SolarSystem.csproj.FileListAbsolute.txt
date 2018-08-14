@@ -1,0 +1,11 @@
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\bin\Debug\netcoreapp2.0\SolarSystem.deps.json
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\bin\Debug\netcoreapp2.0\SolarSystem.runtimeconfig.json
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\bin\Debug\netcoreapp2.0\SolarSystem.runtimeconfig.dev.json
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\bin\Debug\netcoreapp2.0\SolarSystem.dll
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\bin\Debug\netcoreapp2.0\SolarSystem.pdb
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.csprojAssemblyReference.cache
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.csproj.CoreCompileInputs.cache
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.AssemblyInfoInputs.cache
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.AssemblyInfo.cs
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.dll
+C:\Users\a642365\source\SolarSystem\SolarSystem\SolarSystem\SolarSystem\obj\Debug\netcoreapp2.0\SolarSystem.pdb
