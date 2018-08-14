@@ -176,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a642365\\.nuget\\packages\\": {},
+    "C:\\Users\\A675952\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\A675952\\Source\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
       "projectName": "ClassLibrary",
-      "projectPath": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
-      "packagesPath": "C:\\Users\\a642365\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\obj\\",
+      "projectPath": "C:\\Users\\A675952\\Source\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
+      "packagesPath": "C:\\Users\\A675952\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\A675952\\Source\\SolarSystem\\SolarSystem\\ClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\a642365\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\A675952\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
