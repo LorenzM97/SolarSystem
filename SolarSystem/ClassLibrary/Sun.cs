@@ -4,8 +4,11 @@ using System.Text;
 
 namespace ClassLibrary
 {
-    class Sun : SpaceObject
+    class Sun
     {
-      
+        public int _x;
+        public int _y;
+        public int _size;
+
     }
 }
