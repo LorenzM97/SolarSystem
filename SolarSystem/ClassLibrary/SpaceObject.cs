@@ -8,7 +8,7 @@ namespace ClassLibrary
     {
         public int X {get; set;}
         public int Y { get; set; }
-        public int size { get; set; }
+        public int tzuio { get; set; }
 
 
     }
