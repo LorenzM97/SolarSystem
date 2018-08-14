@@ -10,6 +10,6 @@ namespace ClassLibrary
         public int Y { get; set; }
         public int tzuio { get; set; }
 
-
+        //sdfnmj,k.
     }
 }
