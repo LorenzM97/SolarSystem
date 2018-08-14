@@ -4,10 +4,8 @@ using System.Text;
 
 namespace ClassLibrary
 {
-    class Sun
+    class Sun : SpaceObject
     {
-        //cool
-        //finde ich         //nochmal
-
+      
     }
 }
