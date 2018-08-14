@@ -4,14 +4,13 @@ using System.Text;
 
 namespace ClassLibrary
 {
-    class MovingSpaceObject
+    public class MovingSpaceObject
     {
-        public int _x;
-        public int _y;
-        public int _size;
-        public int _distance;
-        public Sun _parentSun;
-        public MovingSpaceObject _parentPlanet;
-        
+        public int X;
+        public int Y;
+        public int Size;
+        public int Dstance;
+        List<MovingSpaceObject> _childMoons = new List<MovingSpaceObject>();
+
     }
 }

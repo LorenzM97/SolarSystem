@@ -6,9 +6,9 @@ namespace ClassLibrary
 {
     class Sun
     {
-        public int _x;
-        public int _y;
-        public int _size;
-
+        public int X;
+        public int Y;
+        public int Size;
+        List<MovingSpaceObject> _childPlanets = new List<MovingSpaceObject>();
     }
 }
