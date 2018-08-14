@@ -1,5 +1,5 @@
 # Front-End
-  - [ ] WPF
+  - [x] WPF
   - [ ] ASP.NET Web Application ??
 
 # Back-End
