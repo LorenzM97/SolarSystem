@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SolarSystem"
   ],
-  "SelectedNode": "\\SolarSystem",
+  "SelectedNode": "\\SolarSystem\\SolarSystem.sln",
   "PreviewInSolutionExplorer": false
 }
