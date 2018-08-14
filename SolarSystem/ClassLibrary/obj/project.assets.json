@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a642365\\source\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
       "projectName": "ClassLibrary",
-      "projectPath": "C:\\Users\\a642365\\source\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
+      "projectPath": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\ClassLibrary.csproj",
       "packagesPath": "C:\\Users\\a642365\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a642365\\source\\SolarSystem\\ClassLibrary\\obj\\",
+      "outputPath": "C:\\Users\\a642365\\source\\SolarSystem\\SolarSystem\\SolarSystem\\ClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
