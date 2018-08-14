@@ -7,7 +7,7 @@ namespace ClassLibrary
     class Sun
     {
         //cool
-        //finde ich auch
-        public int positionX;
+        //finde ich         //nochmal
+
     }
 }
