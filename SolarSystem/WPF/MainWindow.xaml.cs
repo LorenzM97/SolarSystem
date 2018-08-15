@@ -90,10 +90,6 @@ namespace WPF
             tBX.Text = "";
             tBY.Text = "";
             tBDistance.Text = "";
-            tBDistance.Background = Brushes.White;
-            tBX.Background = Brushes.White;
-            tBY.Background = Brushes.White;
-
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
@@ -133,7 +129,6 @@ namespace WPF
 
             if (NumberCheck(tBDistance))
             {
-                tBDistance.Background = Brushes.White;
 
             }
             else
@@ -143,8 +138,6 @@ namespace WPF
 
             if (NumberCheck(tBX))
             {
-                tBX.Background = Brushes.White;
-
             }
             else
             {
@@ -154,18 +147,11 @@ namespace WPF
 
             if (NumberCheck(tBY))
             {
-                tBY.Background = Brushes.White;
-
             }
             else
             {
-                tBY.Background = Brushes.Red;
-
-            }
-
-            if (!NumberCheck(tBY) && tBY.IsVisible || !NumberCheck(tBX) && tBX.IsVisible || !NumberCheck(tBDistance) && tBDistance.IsVisible)
-            {
                 MessageBox.Show("Keine Zahl eingegeben!", "Solarsystem Editor", MessageBoxButton.OK, MessageBoxImage.Error);
+                tBY.Background = Brushes.Red;
 
             }
 
@@ -185,7 +171,7 @@ namespace WPF
         private void SaveInFile()
         {
             // Create a string array with the lines of text
-            string[] lines = { "Erde", "Mars", "Jupiter" };
+            string[] lines = { "First line", "Second line", "Third line" };
 
             // Set a variable to the My Documents path
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
