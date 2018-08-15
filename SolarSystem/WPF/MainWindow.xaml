@@ -9,13 +9,13 @@
     <Grid Margin="0,0,2,0">
         <ScrollViewer HorizontalAlignment="Left" Height="292" Margin="10,10,0,0" VerticalAlignment="Top" Width="160">
             <TreeView Name="treeView" Height="282" Width="140">
-                <TreeViewItem Name="system1" Header="Solarsystem" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
-                    <TreeViewItem Name="sun" Header="Sun" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                    <TreeViewItem Name="planet1" Header="Erde" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
-                        <TreeViewItem Name="moon" Header="Mond" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
+                <TreeViewItem Name="system0" Header="Solarsystem" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
+                    <TreeViewItem Name="sun0" Header="Sun" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
+                    <TreeViewItem Name="planet0" Header="Erde" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
+                        <TreeViewItem Name="moon0" Header="Mond" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
                     </TreeViewItem>
-                    <TreeViewItem Name="planet2" Header="Mars" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                    <TreeViewItem Name="planet3" Header="Jupiter" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
+                    <TreeViewItem Name="planet1" Header="Mars" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
+                    <TreeViewItem Name="planet2" Header="Jupiter" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
                 </TreeViewItem>
                 <TreeViewItem Header="System KOI-351">
                     <TreeViewItem  Header="Planet1"/>
@@ -32,16 +32,16 @@
         </ScrollViewer>
         <Grid HorizontalAlignment="Left" Height="292" Margin="175,10,0,0" VerticalAlignment="Top" Width="421">
             <Label Content="Name: " HorizontalAlignment="Left" Margin="44,28,0,0" VerticalAlignment="Top" Height="27" Width="44"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="93,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Position" HorizontalAlignment="Left" Margin="44,72,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
-            <Label Content="X:" HorizontalAlignment="Left" Margin="70,95,0,0" VerticalAlignment="Top" Height="30" Width="29"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="93,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
-            <Label Content="Y:" HorizontalAlignment="Left" Margin="70,120,0,0" VerticalAlignment="Top" Height="30" Width="29"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="93,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
+            <TextBox Name="tBHeader" HorizontalAlignment="Left" Height="23" Margin="93,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Name="lblPosition" Content="Position" HorizontalAlignment="Left" Margin="44,72,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+            <Label Name="lblX" Content="X:" HorizontalAlignment="Left" Margin="70,95,0,0" VerticalAlignment="Top" Height="30" Width="29"/>
+            <TextBox Name="tBX" HorizontalAlignment="Left" Height="23" Margin="93,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
+            <Label Name="lblY" Content="Y:" HorizontalAlignment="Left" Margin="70,120,0,0" VerticalAlignment="Top" Height="30" Width="29"/>
+            <TextBox Name="tBY" HorizontalAlignment="Left" Height="23" Margin="93,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
             <Label Name="lblDistance" Content="Distance to parent: " HorizontalAlignment="Left" Margin="228,72,0,0" VerticalAlignment="Top" Height="27" Width="111"/>
             <TextBox Name="tBDistance" HorizontalAlignment="Left" Height="23" Margin="339,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
-            <Button Name="buttonAdd" Content="Add Planet" HorizontalAlignment="Left" Margin="44,172,0,0" VerticalAlignment="Top" Width="79" Height="24" Click="buttonAdd_Click"/>
-            <Button Content="Save Changes" HorizontalAlignment="Left" Margin="300,212,0,0" VerticalAlignment="Top" Width="91" Height="50"/>
+            <Button Name="buttonAdd" Content="Add Planet" HorizontalAlignment="Left" Margin="228,225,0,0" VerticalAlignment="Top" Width="79" Height="37" Click="buttonAdd_Click"/>
+            <Button Content="Save Changes" HorizontalAlignment="Left" Margin="111,225,0,0" VerticalAlignment="Top" Width="91" Height="37" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>
