@@ -185,7 +185,7 @@ namespace WPF
         private void SaveInFile()
         {
             // Create a string array with the lines of text
-            string[] lines = { "First line", "Second line", "Third line" };
+            string[] lines = { "Erde", "Mars", "Jupiter" };
 
             // Set a variable to the My Documents path
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
