@@ -9,7 +9,7 @@ namespace ClassLibrary
         public int X;
         public int Y;
         public int Size;
-        public int Dstance;
+        public int Distance;
         List<MovingSpaceObject> _childMoons = new List<MovingSpaceObject>();
 
     }
