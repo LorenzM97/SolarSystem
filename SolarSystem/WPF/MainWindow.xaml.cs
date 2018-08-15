@@ -1,4 +1,4 @@
-﻿using ClassLibrary;
+﻿using Library_Solarsystem;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,6 +25,7 @@ namespace WPF
     {
         private int count;
         char[] numberCheck;
+        List<Solarsystem> _lstSolarSystems = new List<Solarsystem>();
         public MainWindow()
         {
             InitializeComponent();
