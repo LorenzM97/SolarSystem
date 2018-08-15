@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //MovingSpaceObject spaceObject = new MovingSpaceObject();
+            //spaceObject.Size = Convert.ToInt32(tB1.Text);
+
+            //textBlock1.Text = "" + spaceObject.Size;
         }
     }
 }
