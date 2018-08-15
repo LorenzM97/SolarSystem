@@ -127,12 +127,31 @@ namespace WPF
                 tVItem.Header = tVItem.Name;
             }
 
-            //if (!NumberCheck(tBX))
-            //{
-            //    MessageBox.Show("Fehler");
-            //}
-            if (!int.TryParse(tBX.Text, out int n))
+            if (NumberCheck(tBDistance))
             {
+
+            }
+            else
+            {
+                tBDistance.Background = Brushes.Red;
+            }
+
+            if (NumberCheck(tBX))
+            {
+            }
+            else
+            {
+                tBX.Background = Brushes.Red;
+
+            }
+
+            if (NumberCheck(tBY))
+            {
+            }
+            else
+            {
+                tBY.Background = Brushes.Red;
+
                 MessageBox.Show("Keine Zahl eingegeben!", "Solarsystem Editor", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
@@ -141,13 +160,12 @@ namespace WPF
 
         private bool NumberCheck(TextBox tb)
         {
-            numberCheck[count] = Convert.ToChar(tb.Text);
-            if (!Char.IsNumber(numberCheck[count]))
+            if (int.TryParse(tb.Text, out int n))
             {
-                return false;
+                return true;
             }
             else
-                return true;
+                return false;
         }
 
         private void SaveInFile()
