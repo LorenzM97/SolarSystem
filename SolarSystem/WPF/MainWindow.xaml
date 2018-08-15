@@ -10,14 +10,22 @@
         <ScrollViewer HorizontalAlignment="Left" Height="409" Margin="10,10,0,0" VerticalAlignment="Top" Width="160">
             <TreeView Height="392" Width="140">
                 <TreeViewItem Header="Solarsystem1">
-                    <TreeViewItem Header="Erde"/>
+                    <TreeViewItem Header="Erde">
+                        <TreeViewItem Header="Mond"/>
+                    </TreeViewItem>
                     <TreeViewItem Header="Mars"/>
                     <TreeViewItem Header="Jupiter"/>
                 </TreeViewItem>
-                <TreeViewItem Header="Solarsystem2">
+                <TreeViewItem Header="System KOI-351">
                     <TreeViewItem Header="Planet1"/>
-                    <TreeViewItem Header="Planet2"/>
+                    <TreeViewItem Header="Planet2">
+                        <TreeViewItem Header="Mond1"/>
+                        <TreeViewItem Header="Mond2"/>
+                    </TreeViewItem>
                     <TreeViewItem Header="Planet3"/>
+                    <TreeViewItem Header="Planet4">
+                        <TreeViewItem Header="Mond1"/>
+                    </TreeViewItem>
                 </TreeViewItem>
             </TreeView>
         </ScrollViewer>
