@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,8 +65,8 @@ namespace WPF
                 lblDistance.Visibility = Visibility.Hidden;
                 tBDistance.Visibility = Visibility.Hidden;
                 buttonAdd.Visibility = Visibility.Hidden;
-                buttonAdd.Visibility = Visibility.Visible;
-                buttonAdd.Content = "Add Planet";
+                //buttonAdd.Visibility = Visibility.Visible;
+                //buttonAdd.Content = "Add Planet";
 
                 tBX.Visibility = Visibility.Visible;
                 tBY.Visibility = Visibility.Visible;
@@ -84,6 +85,11 @@ namespace WPF
                 lblX.Visibility = Visibility.Visible;
                 lblY.Visibility = Visibility.Visible;
             }
+
+            tBHeader.Text = tVItem.Header.ToString();
+            tBX.Text = "";
+            tBY.Text = "";
+            tBDistance.Text = "";
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
@@ -125,10 +131,12 @@ namespace WPF
             //{
             //    MessageBox.Show("Fehler");
             //}
-            if (int.TryParse(tBX.Text, out int n))
+            if (!int.TryParse(tBX.Text, out int n))
             {
-                MessageBox.Show("passt");
+                MessageBox.Show("Keine Zahl eingegeben!", "Solarsystem Editor", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            SaveInFile();
         }
 
         private bool NumberCheck(TextBox tb)
@@ -140,6 +148,22 @@ namespace WPF
             }
             else
                 return true;
+        }
+
+        private void SaveInFile()
+        {
+            // Create a string array with the lines of text
+            string[] lines = { "First line", "Second line", "Third line" };
+
+            // Set a variable to the My Documents path
+            string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // Write the string array to a new file named "WriteLines.txt"
+            using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(mydocpath, "WriteLines.txt")))
+            {
+                foreach (string line in lines)
+                    outputFile.Write(line + ",");
+            }
         }
     }
 }

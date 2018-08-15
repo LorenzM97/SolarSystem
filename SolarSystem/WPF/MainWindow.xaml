@@ -11,22 +11,6 @@
             <TreeView Name="treeView" Height="282" Width="140">
                 <TreeViewItem Name="system0" Header="Solarsystem" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
                     <TreeViewItem Name="sun0" Header="Sun" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                    <TreeViewItem Name="planet0" Header="Erde" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick">
-                        <TreeViewItem Name="moon0" Header="Mond" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                    </TreeViewItem>
-                    <TreeViewItem Name="planet1" Header="Mars" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                    <TreeViewItem Name="planet2" Header="Jupiter" MouseLeftButtonUp="TreeViewItem_MouseDoubleClick"/>
-                </TreeViewItem>
-                <TreeViewItem Header="System KOI-351">
-                    <TreeViewItem  Header="Planet1"/>
-                    <TreeViewItem Header="Planet2">
-                        <TreeViewItem Header="Mond1"/>
-                        <TreeViewItem Header="Mond2"/>
-                    </TreeViewItem>
-                    <TreeViewItem Header="Planet3"/>
-                    <TreeViewItem Header="Planet4">
-                        <TreeViewItem Header="Mond1"/>
-                    </TreeViewItem>
                 </TreeViewItem>
             </TreeView>
         </ScrollViewer>
