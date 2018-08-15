@@ -31,6 +31,7 @@
             <TextBox Name="tBDistance" HorizontalAlignment="Left" Height="23" Margin="339,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
             <Button Name="buttonAdd" Content="Add Planet" HorizontalAlignment="Left" Margin="228,225,0,0" VerticalAlignment="Top" Width="79" Height="37" Click="buttonAdd_Click"/>
             <Button Content="Save Changes" HorizontalAlignment="Left" Margin="111,225,0,0" VerticalAlignment="Top" Width="91" Height="37" Click="Button_Click"/>
+            <Button Name="buttonAddSystem" Content="Add System" HorizontalAlignment="Left" Margin="332,225,0,0" VerticalAlignment="Top" Width="79" Height="37" Click="buttonAddSystem_Click"/>
         </Grid>
     </Grid>
 </Window>
