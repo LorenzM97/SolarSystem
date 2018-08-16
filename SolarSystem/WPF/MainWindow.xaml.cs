@@ -2,6 +2,7 @@
 using Library_Solarsystem;
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,17 +52,27 @@ namespace   WPF
 
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             using (var c = new HttpClient() { })
             {
-                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue.ToString()}"));
+                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));
                 if (response.IsSuccessStatusCode)
                 {
-                    this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();
-
+                    Debug.WriteLine(" comboChanged1 | " + tBName.Text);
+                    this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();   //Data Binding funktioniert, hier wird jedoch der Text nicht in Name sondern in "" geändert - siehe Debug
+                    Debug.WriteLine(" comboChanged2 | " + tBName.Text);
                 }
 
-
+                treeView.Items.Clear();
+                CreateTreeView();
             }
+        }
+
+        public void CreateTreeView()
+        {
+            TreeViewItem treeViewItem = new TreeViewItem();
+            treeViewItem.Header = combo.SelectedValue.ToString();
+            treeView.Items.Add(treeViewItem);
         }
     }
 }
