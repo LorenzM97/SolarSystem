@@ -12,14 +12,10 @@ namespace SolarSystem.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        Galaxy galaxy = new Galaxy();
-
         
-
-
         List<SpaceObject> _sunsystems = new List<SpaceObject>() {
             new SpaceObject() { Name = "test", _listMoons = { new SpaceObject() { Name = "m1" }, new SpaceObject() { Name = "m2" } } },
-            new SpaceObject() { Name = "test2", _listMoons = { new SpaceObject() { Name = "m3" } } } };
+            new SpaceObject("planet", "earth", 10, 30, 0) {_listMoons = { new SpaceObject() { Name = "m3" } } } };
 
         // GET api/values
         [HttpGet]
