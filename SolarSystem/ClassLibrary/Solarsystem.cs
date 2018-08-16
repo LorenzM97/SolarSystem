@@ -9,7 +9,7 @@ namespace Library_Solarsystem
     public class Solarsystem
     {
         public string Name;
-        public ObservableCollection<MovingSpaceObject> _listPlanets = new ObservableCollection<MovingSpaceObject>();
+        public ObservableCollection<SpaceObject> _listPlanets = new ObservableCollection<SpaceObject>();
 
         public Solarsystem(string name)
         {

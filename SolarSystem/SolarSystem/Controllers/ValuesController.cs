@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using ClassLibrary;
+using Library_Solarsystem;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SolarSystem.Controllers
@@ -10,9 +12,14 @@ namespace SolarSystem.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        List<MovingSpaceObject> _sunsystems = new List<MovingSpaceObject>() {
-            new MovingSpaceObject() { Name = "test", _listMoons = { new MovingSpaceObject() { Name = "m1" }, new MovingSpaceObject() { Name = "m2" } } },
-            new MovingSpaceObject() { Name = "test2", _listMoons = { new MovingSpaceObject() { Name = "m3" } } } };
+        Galaxy galaxy = new Galaxy();
+
+        
+
+
+        List<SpaceObject> _sunsystems = new List<SpaceObject>() {
+            new SpaceObject() { Name = "test", _listMoons = { new SpaceObject() { Name = "m1" }, new SpaceObject() { Name = "m2" } } },
+            new SpaceObject() { Name = "test2", _listMoons = { new SpaceObject() { Name = "m3" } } } };
 
         // GET api/values
         [HttpGet]
@@ -23,7 +30,7 @@ namespace SolarSystem.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public MovingSpaceObject Get(string id)
+        public SpaceObject Get(string id)
         {
             return (from a in _sunsystems where a.Name == id select a).First();
         }

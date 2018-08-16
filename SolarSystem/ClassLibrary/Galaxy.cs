@@ -9,6 +9,8 @@ namespace Library_Solarsystem
     {
         public string Name;
 
-        public ObservableCollection<Solarsystem> _listGalaxy = new ObservableCollection<Solarsystem>();
+        public ObservableCollection<Solarsystem> _listSystems = new ObservableCollection<Solarsystem>();
+
+       
     }
 }
