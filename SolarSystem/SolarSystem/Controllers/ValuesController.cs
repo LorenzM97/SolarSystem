@@ -14,8 +14,9 @@ namespace SolarSystem.Controllers
     {
         
         List<Solarsystem> _sunsystems = new List<Solarsystem>() { new Solarsystem("Erdsystem") { _listPlanets = {
-            new SpaceObject() { Name = "test", _listMoons = { new SpaceObject() { Name = "m1" }, new SpaceObject() { Name = "m2" } } },
-            new SpaceObject("planet", "earth", 10, 30, 0) {_listMoons = { new SpaceObject() { Name = "m3" } } } } } };
+            new SpaceObject("planet", "Venus", 20, 20, 0) {  _listMoons = { new SpaceObject() { Name = "m1" }, new SpaceObject() { Name = "m2" } } },
+            new SpaceObject("planet", "earth", 10, 30, 0) {_listMoons = { new SpaceObject() { Name = "m3" } } } } },
+            new Solarsystem("Alpha Centauri"), new Solarsystem("Proxima Centauri")};
 
         // GET api/values
         [HttpGet]
