@@ -53,7 +53,7 @@ namespace WPF
         {
             using (var c = new HttpClient() { })
             {
-                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));
+                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo}"));
                 if (response.IsSuccessStatusCode)
                 {
                     this.DataContext = await response.Content.ReadAsAsync<SpaceObject>();
