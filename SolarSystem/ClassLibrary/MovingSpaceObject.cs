@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace ClassLibrary
@@ -11,7 +12,7 @@ namespace ClassLibrary
         public int Size;
         public int Distance;
         public string Name, Type;
-        public List<MovingSpaceObject> _childMoons = new List<MovingSpaceObject>();
+        public ObservableCollection<MovingSpaceObject> _listMoons = new ObservableCollection<MovingSpaceObject>();
 
         //public MovingSpaceObject(string type, string name, int x, int y, int size, int distance)
         //{

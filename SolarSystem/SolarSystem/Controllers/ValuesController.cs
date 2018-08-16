@@ -11,8 +11,8 @@ namespace SolarSystem.Controllers
     public class ValuesController : Controller
     {
         List<MovingSpaceObject> _sunsystems = new List<MovingSpaceObject>() {
-            new MovingSpaceObject() { Name = "test", _childMoons = { new MovingSpaceObject() { Name = "m1" }, new MovingSpaceObject() { Name = "m2" } } },
-            new MovingSpaceObject() { Name = "test2", _childMoons = { new MovingSpaceObject() { Name = "m3" } } } };
+            new MovingSpaceObject() { Name = "test", _listMoons = { new MovingSpaceObject() { Name = "m1" }, new MovingSpaceObject() { Name = "m2" } } },
+            new MovingSpaceObject() { Name = "test2", _listMoons = { new MovingSpaceObject() { Name = "m3" } } } };
 
         // GET api/values
         [HttpGet]
