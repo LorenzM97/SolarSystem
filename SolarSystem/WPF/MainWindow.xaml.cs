@@ -1,4 +1,5 @@
-﻿using Library_Solarsystem;
+﻿using ClassLibrary;
+using Library_Solarsystem;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -117,6 +118,9 @@ namespace WPF
                 item.Header = "Planet" + count;
                 item.MouseLeftButtonUp += TreeViewItem_MouseDoubleClick;
                 tVItem.Items.Add(item);
+
+                //_lstSolarSystems.Add(new MovingSpaceObject("planet", item.Name, 0, 0, 0));
+
             }
         }
 
