@@ -36,10 +36,42 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Column="0" Width="Auto" HorizontalAlignment="Left" >Add Sys</Button>
-            <Button Grid.Column="1" Width="Auto" HorizontalAlignment="Left" >Add sun</Button>
-            <Button Grid.Column="2" Width="Auto" HorizontalAlignment="Right">Add Plan</Button>
-            <Button Grid.Column="3" Width="Auto" HorizontalAlignment="Right">Add moon</Button>
+            <Button Grid.Column="0" Width="Auto" HorizontalAlignment="Left" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF5752C9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> Add Sys</Button>
+            <Button Grid.Column="1" Width="Auto" HorizontalAlignment="Left" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF5752C9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> Add sun</Button>
+            <Button Grid.Column="2" Width="Auto" HorizontalAlignment="Right">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF5752C9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> Add Plan</Button>
+            <Button Grid.Column="3" Width="Auto" HorizontalAlignment="Right">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF5752C9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> Add moon</Button>
         </Grid>
 
         <TreeView Grid.Row="2">
@@ -68,5 +100,16 @@
 
 
         </Grid>
+        <ComboBox x:Name="combo" HorizontalAlignment="Left" Margin="66,142,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding}" SelectionChanged="combo_SelectionChanged" Grid.Row="2" Foreground="White">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF702727" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="92,166,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="2"/>
     </Grid>
 </Window>
