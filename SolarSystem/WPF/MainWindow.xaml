@@ -17,12 +17,6 @@
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
 
-        <ComboBox   Grid.ColumnSpan="3" >
-            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
-        </ComboBox>
-
 
         <Grid Grid.Row="1" Grid.Column="0">
 
@@ -44,7 +38,8 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add Sys</Button>
+                </Button.Background> Add Sys
+            </Button>
             <Button Grid.Column="1" Width="Auto" HorizontalAlignment="Left" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -53,7 +48,8 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add sun</Button>
+                </Button.Background> Add sun
+            </Button>
             <Button Grid.Column="2" Width="Auto" HorizontalAlignment="Right">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -62,7 +58,8 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add Plan</Button>
+                </Button.Background> Add Plan
+            </Button>
             <Button Grid.Column="3" Width="Auto" HorizontalAlignment="Right">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -71,7 +68,8 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add moon</Button>
+                </Button.Background> Add moon
+            </Button>
         </Grid>
 
         <TreeView Grid.Row="2">
@@ -94,19 +92,19 @@
                    " HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="59" Foreground="#FFFDFDFD"></Label>
             <Label Grid.Row="2" Grid.Column="0" Content="Winkel" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="46" Foreground="White"></Label>
             <Label Grid.Row="1" Grid.Column="1" Content="x:" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="18"></Label>
-            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  Text="{Binding Distance, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  Text="{Binding Degree, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
 
 
         </Grid>
-        <ComboBox x:Name="combo" HorizontalAlignment="Left" Margin="66,142,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding}" SelectionChanged="combo_SelectionChanged" Grid.Row="2" Foreground="White">
+        <ComboBox x:Name="combo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="763" ItemsSource="{Binding}" SelectionChanged="combo_SelectionChanged" Foreground="Black" Grid.ColumnSpan="3">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
                     <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
                     <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
-                    <GradientStop Color="#FF702727" Offset="1"/>
+                    <GradientStop Color="#FF9D9DF5" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
