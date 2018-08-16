@@ -13,7 +13,7 @@ namespace SolarSystem.Controllers
     public class ValuesController : Controller
     {
         
-        List<Solarsystem> _sunsystems = new List<Solarsystem>() { new Solarsystem("Erdsystem") { _listPlanets = {
+        List<Solarsystem> _sunsystems = new List<Solarsystem>() { new Solarsystem("Erdsystem") { Name = "Erdsystem", _listPlanets = {
             new SpaceObject("planet", "Venus", 20, 20, 0) {  _listMoons = { new SpaceObject() { Name = "m1" }, new SpaceObject() { Name = "m2" } } },
             new SpaceObject("planet", "earth", 10, 30, 0) {_listMoons = { new SpaceObject() { Name = "m3" } } } } },
             new Solarsystem("Alpha Centauri"), new Solarsystem("Proxima Centauri")};
