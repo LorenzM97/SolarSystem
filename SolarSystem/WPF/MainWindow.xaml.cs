@@ -43,6 +43,7 @@ namespace WPF
                 tBDistance.Visibility = Visibility.Visible;
                 buttonAdd.Visibility = Visibility.Visible;
                 buttonAdd.Content = "Add Moon";
+                buttonAddSystem.Visibility = Visibility.Hidden;
 
                 tBX.Visibility = Visibility.Visible;
                 tBY.Visibility = Visibility.Visible;
@@ -55,6 +56,7 @@ namespace WPF
                 buttonAdd.Content = "Add Planet";
                 lblDistance.Visibility = Visibility.Hidden;
                 tBDistance.Visibility = Visibility.Hidden;
+                buttonAddSystem.Visibility = Visibility.Visible;
 
                 tBX.Visibility = Visibility.Hidden;
                 tBY.Visibility = Visibility.Hidden;
@@ -67,6 +69,7 @@ namespace WPF
                 lblDistance.Visibility = Visibility.Hidden;
                 tBDistance.Visibility = Visibility.Hidden;
                 buttonAdd.Visibility = Visibility.Hidden;
+                buttonAddSystem.Visibility = Visibility.Hidden;
                 //buttonAdd.Visibility = Visibility.Visible;
                 //buttonAdd.Content = "Add Planet";
 
@@ -80,6 +83,7 @@ namespace WPF
                 lblDistance.Visibility = Visibility.Visible;
                 tBDistance.Visibility = Visibility.Visible;
                 buttonAdd.Visibility = Visibility.Hidden;
+                buttonAddSystem.Visibility = Visibility.Hidden;
 
                 tBX.Visibility = Visibility.Visible;
                 tBY.Visibility = Visibility.Visible;
@@ -95,7 +99,6 @@ namespace WPF
             tBDistance.Background = Brushes.White;
             tBX.Background = Brushes.White;
             tBY.Background = Brushes.White;
-
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
@@ -124,6 +127,11 @@ namespace WPF
             }
         }
 
+        private void buttonAddSystem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TreeViewItem tVItem = treeView.SelectedItem as TreeViewItem;
@@ -138,7 +146,6 @@ namespace WPF
 
             if (NumberCheck(tBDistance))
             {
-                tBDistance.Background = Brushes.White;
 
             }
             else
@@ -149,7 +156,6 @@ namespace WPF
             if (NumberCheck(tBX))
             {
                 tBX.Background = Brushes.White;
-
             }
             else
             {
@@ -160,7 +166,6 @@ namespace WPF
             if (NumberCheck(tBY))
             {
                 tBY.Background = Brushes.White;
-
             }
             else
             {
@@ -171,6 +176,7 @@ namespace WPF
             if (!NumberCheck(tBY) && tBY.IsVisible || !NumberCheck(tBX) && tBX.IsVisible || !NumberCheck(tBDistance) && tBDistance.IsVisible)
             {
                 MessageBox.Show("Keine Zahl eingegeben!", "Solarsystem Editor", MessageBoxButton.OK, MessageBoxImage.Error);
+                tBY.Background = Brushes.Red;
 
             }
 
@@ -190,7 +196,7 @@ namespace WPF
         private void SaveInFile()
         {
             // Create a string array with the lines of text
-            string[] lines = { "Erde", "Mars", "Jupiter" };
+            string[] lines = { "First line", "Second line", "Third line" };
 
             // Set a variable to the My Documents path
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
