@@ -17,7 +17,7 @@
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
 
-        <ComboBox Grid.ColumnSpan="3" >
+        <ComboBox   Grid.ColumnSpan="3" >
             <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
             <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
             <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
