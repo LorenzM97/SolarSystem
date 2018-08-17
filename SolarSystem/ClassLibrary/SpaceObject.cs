@@ -12,7 +12,11 @@ namespace ClassLibrary
         public int Y;
         public int Size;
         public int Distance;
-        private string _name;
+//        {
+//            get => Distance;
+//            set { Distance = value; Changed<int>("Distance", value); }
+//}
+private string _name;
 
         public string Name
         {
@@ -20,10 +24,11 @@ namespace ClassLibrary
             set { _name = value; Changed<string>("Name", value); } 
         }
 
-       
+        public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
+
         public string  Type;
         public double Degree;
-        public ObservableCollection<SpaceObject> _listMoons = new ObservableCollection<SpaceObject>();
+        private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 

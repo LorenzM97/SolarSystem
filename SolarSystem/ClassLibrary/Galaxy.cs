@@ -9,8 +9,8 @@ namespace Library_Solarsystem
     {
         public string Name;
 
-        public ObservableCollection<Solarsystem> _listSystems = new ObservableCollection<Solarsystem>();
+         ObservableCollection<Solarsystem> _listSystems = new ObservableCollection<Solarsystem>();
 
-       
-    }
+        public ObservableCollection<Solarsystem> ListSystems { get => _listSystems; set => _listSystems = value; }
+    } 
 }

@@ -15,7 +15,7 @@ namespace   WPF
     public partial class MainWindow : Window
     {
 
-        public ObservableCollection<string> Solarsystems;
+        static public ObservableCollection<string> Solarsystems;
 
         public MainWindow()
         {
@@ -58,8 +58,8 @@ namespace   WPF
                     this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();
                 }
                 
-                treeView.Items.Clear();
-                CreateTreeView();
+                //treeView.Items.Clear();
+                //CreateTreeView();
             }
         }
 
@@ -69,5 +69,11 @@ namespace   WPF
             treeViewItem.Header = combo.SelectedValue.ToString();
             treeView.Items.Add(treeViewItem);
         }
+
+        //public static ObservableCollection GetData()
+        //{
+        //    ObservableCollection items = new ObservableCollection();
+
+        //}
     }
 }
