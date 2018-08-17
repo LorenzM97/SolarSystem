@@ -38,10 +38,7 @@ namespace   WPF
                         if (!Solarsystems.Contains(item))
                             Solarsystems.Add(item);
                     }
-
                 }
-
-
             }
         }
 
@@ -58,11 +55,9 @@ namespace   WPF
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(" comboChanged1 | " + tBName.Text);
-                    this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();   //Data Binding funktioniert, hier wird jedoch der Text nicht in Name sondern in "" geändert - siehe Debug
-                    Debug.WriteLine(" comboChanged2 | " + tBName.Text);
+                    this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();
                 }
-
+                
                 treeView.Items.Clear();
                 CreateTreeView();
             }

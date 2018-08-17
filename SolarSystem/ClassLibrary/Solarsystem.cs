@@ -9,8 +9,10 @@ namespace Library_Solarsystem
 {
     public class Solarsystem : INotifyPropertyChanged
     {
-        public string Name;
+        private string name;
         public ObservableCollection<SpaceObject> _listPlanets = new ObservableCollection<SpaceObject>();
+
+        public string Name { get => name; set => name = value; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -18,13 +20,11 @@ namespace Library_Solarsystem
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(p));
-
         }
 
         public Solarsystem(string name)
         {
             Name = name;
         }
-
     }
 }
