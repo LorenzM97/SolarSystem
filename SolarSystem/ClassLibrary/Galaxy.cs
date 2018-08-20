@@ -20,5 +20,11 @@ namespace Library_Solarsystem
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(p));
         }
+
+        protected void Changed2(string p)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(p));
+        }
     }
 }

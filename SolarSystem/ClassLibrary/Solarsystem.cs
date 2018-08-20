@@ -12,7 +12,7 @@ namespace Library_Solarsystem
         protected string name;
         private ObservableCollection<SpaceObject> listPlanets = new ObservableCollection<SpaceObject>();
 
-        public string Name { get => name; set => name = value; }
+        public string Name { get => name; set { name = value; Changed2("Name"); } }
         public ObservableCollection<SpaceObject> ListPlanets { get => listPlanets; set => listPlanets = value; }
 
         public Solarsystem()

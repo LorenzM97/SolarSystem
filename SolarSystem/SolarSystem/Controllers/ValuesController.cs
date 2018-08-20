@@ -49,12 +49,12 @@ namespace SolarSystem.Controllers
 
         // GET api/values
         [HttpGet]
-        public IEnumerable<Solarsystem> Get()
+        public IEnumerable<string> Get()
         {
             //galaxy.ListSystems = _sunsystems;
-            //return from a in _sunsystems select a.Name;
-            
-            return _sunsystems;
+            return from a in _sunsystems select a.Name;
+
+           // return _sunsystems;
         }
 
         // GET api/values/5
