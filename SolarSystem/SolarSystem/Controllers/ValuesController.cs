@@ -17,7 +17,7 @@ namespace SolarSystem.Controllers
             new Solarsystem("Erdsystem") { Name = "Erdsystem",
                 ListPlanets = {
                     new SpaceObject("planet", "Venus", 20, 20, 0) {
-                        _listMoons = {
+                        ListMoons = {
                             new SpaceObject("Mond1") { Name = "m1" },
                             new SpaceObject("Mond2") { Name = "m2" }
                         }
