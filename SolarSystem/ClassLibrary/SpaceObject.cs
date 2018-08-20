@@ -31,6 +31,7 @@ namespace ClassLibrary
         public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
 
         private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
+       
 
         //public event PropertyChangedEventHandler PropertyChanged;
 
@@ -46,33 +47,30 @@ namespace ClassLibrary
 
         }
 
-        public SpaceObject(string type, string name, SpaceObject parent, int size, int distance, double degree)
-        public SpaceObject(string name) : base(name)
-        {
-        }
-
-        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)
+       
+        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)       //Planet, Moon
         {
             Type = type;
             Degree = degree;
             Size = size;
             Distance = distance;
             Name = name;
-            _parent = parent;
         }
 
-        public SpaceObject()
-        {
 
-        }
-
-        public SpaceObject(string type, string name, int x, int y, int size) : base(name)
+        public SpaceObject(string type, string name, int x, int y, int size) : base(name)       //Sun
         {
             Type = type;
             X = x;
             Y = y;
             Size = size;
-            //Name = name;
+        }
+
+        public SpaceObject(string type, string name, int size)      //Sun
+        {
+            Type = type;
+            Name = name;
+            Size = size;
         }
 
         public void Move(float speed)
@@ -82,5 +80,18 @@ namespace ClassLibrary
 
             Degree = (Degree + (float)Math.PI / 100 * speed);
         }
+
+        public void Move(float speed, List<SpaceObject> list)
+        {
+            foreach(var item in list)
+            {
+                item.X = (int)((item.Distance * Math.Cos(item.Degree)) + this.X + this.Size / 3);
+                item.Y = (int)((item.Distance * Math.Sin(item.Degree)) + this.Y + this.Size / 3);
+
+                item.Degree = (item.Degree + (float)Math.PI / 100 * speed);
+
+            }
+        }
+
     }
 }

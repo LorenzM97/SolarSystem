@@ -25,6 +25,5 @@ namespace Library_Solarsystem
             Name = name;
         }
 
-       
     }
 }

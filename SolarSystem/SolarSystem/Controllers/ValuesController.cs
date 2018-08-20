@@ -17,36 +17,40 @@ namespace SolarSystem.Controllers
         public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
             new Solarsystem("Erdsystem") { Name = "Erdsystem",
                 ListPlanets = {
-                    new SpaceObject("planet", "Venus", 20, 20, 0) {
+                   new SpaceObject("sun", "Sonne", 100)
+                    {
+
+                    },
+                    new SpaceObject("planet", "Venus", 80, 80, 0.0) {
                         ListMoons = {
-                            new SpaceObject("Mond1") { Name = "m1" },
-                            new SpaceObject("Mond2") { Name = "m2" }
+                            new SpaceObject("moon", "Mond1", 10, 20, Math.PI) {  },
+                            new SpaceObject("moon", "Mond2", 20, 30, 0.0) { }
                         }
                     },
-                    new SpaceObject("planet", "earth", 10, 30, 0) {
+                    new SpaceObject("planet", "earth",  200, 400, 0.0) {
                         ListMoons = {
-                            new SpaceObject() { Name = "m3" }
+                            new SpaceObject("moon", "Mond3", 50, 30, Math.PI) {  }
                         }
                     }
-                }
-            },
-            new Solarsystem("Alpha Centauri") {
-                ListPlanets = {
-                    new SpaceObject("planet", "XAMK", 20, 20, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m1" },
-                            new SpaceObject() { Name = "m2" }
-                        }
-                    },
-                    new SpaceObject("planet", "asf", 10, 30, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m3" }
-                        }
-                    }
-                }
-            },
-            new Solarsystem("Proxima Centauri")
-        };
+                } } };
+        //    },
+        //    new Solarsystem("Alpha Centauri") {
+        //        ListPlanets = {
+        //            new SpaceObject("planet", "XAMK", 20, 20, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject("moon", "Mond4", 24, 12, 1 / 2 * Math.PI) {  },
+        //                    new SpaceObject("moon", "Mond5", 24, 12, Math.PI) {  }
+        //                }
+        //            },
+        //            new SpaceObject("planet", "asf", 10, 30, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject("moon", "Mond6", 24, 12, Math.PI) {  }
+        //                }
+        //            }
+        //        }
+        //    },
+        //    new Solarsystem("Proxima Centauri")
+        //};
 
         // GET api/values
         [HttpGet]
@@ -54,7 +58,7 @@ namespace SolarSystem.Controllers
         {
             //galaxy.ListSystems = _sunsystems;
             //return from a in _sunsystems select a.Name;
-            
+
             return _sunsystems;
         }
 
