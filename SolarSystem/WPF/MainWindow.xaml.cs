@@ -89,7 +89,7 @@ namespace   WPF
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values"));
                 if (response.IsSuccessStatusCode)
                 {
-                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("C:/Users/A675952/Source/SolarSystem/SolarSystem", "jsonSolarsystems.txt")))
+                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
                     {
                         outputFile.Write(await response.Content.ReadAsStringAsync());
                     }
