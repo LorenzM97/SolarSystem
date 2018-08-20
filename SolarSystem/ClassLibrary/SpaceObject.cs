@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library_Solarsystem;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace ClassLibrary
 {
-    public class SpaceObject : INotifyPropertyChanged
+    public class SpaceObject : Solarsystem, INotifyPropertyChanged
     {
         public int X;
         public int Y;
@@ -21,26 +22,36 @@ namespace ClassLibrary
         //}
         private string _name;
 
-        public string Name
-        {
-            get => _name;
-            set { _name = value; Changed<string>("Name", value); } 
-        }
+        //public string Name
+        //{
+        //    get => name;
+        //    set { name = value; Changed<string>("Name", value); } 
+        //}
 
         public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
 
         private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Changed<T>(string p, T value)
+        //private void Changed<T>(string p, T value)
+        //{
+        //    if (PropertyChanged != null)
+        //        PropertyChanged(this, new PropertyChangedEventArgs(p));
+
+        //}
+
+        public SpaceObject()
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(p));
-   
+
         }
 
         public SpaceObject(string type, string name, SpaceObject parent, int size, int distance, double degree)
+        public SpaceObject(string name) : base(name)
+        {
+        }
+
+        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)
         {
             Type = type;
             Degree = degree;
@@ -55,13 +66,13 @@ namespace ClassLibrary
 
         }
 
-        public SpaceObject(string type, string name, int x, int y, int size)
+        public SpaceObject(string type, string name, int x, int y, int size) : base(name)
         {
             Type = type;
             X = x;
             Y = y;
             Size = size;
-            Name = name;
+            //Name = name;
         }
 
         public void Move(float speed)

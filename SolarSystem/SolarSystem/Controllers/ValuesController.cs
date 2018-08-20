@@ -12,14 +12,15 @@ namespace SolarSystem.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        
-        public List<Solarsystem> _sunsystems = new List<Solarsystem>() {
+        //Galaxy galaxy = new Galaxy();
+        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
+        public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
             new Solarsystem("Erdsystem") { Name = "Erdsystem",
                 ListPlanets = {
                     new SpaceObject("planet", "Venus", 20, 20, 0) {
                         ListMoons = {
-                            new SpaceObject() { Name = "m1" },
-                            new SpaceObject() { Name = "m2" }
+                            new SpaceObject("Mond1") { Name = "m1" },
+                            new SpaceObject("Mond2") { Name = "m2" }
                         }
                     },
                     new SpaceObject("planet", "earth", 10, 30, 0) {
@@ -49,9 +50,12 @@ namespace SolarSystem.Controllers
 
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Solarsystem> Get()
         {
-            return from a in _sunsystems select a.Name;
+            //galaxy.ListSystems = _sunsystems;
+            //return from a in _sunsystems select a.Name;
+            
+            return _sunsystems;
         }
 
         // GET api/values/5
@@ -63,8 +67,9 @@ namespace SolarSystem.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]ObservableCollection<Solarsystem> value)
         {
+            _sunsystems = value;
         }
 
         // PUT api/values/5
