@@ -13,11 +13,14 @@ namespace ClassLibrary
         public int Y;
         public int Size;
         public int Distance;
-//        {
-//            get => Distance;
-//            set { Distance = value; Changed<int>("Distance", value); }
-//}
-private string _name;
+        public double Degree;
+        public string Type;
+        public SpaceObject _parent;
+        //        {
+        //            get => Distance;
+        //            set { Distance = value; Changed<int>("Distance", value); }
+        //}
+        private string _name;
 
         //public string Name
         //{
@@ -27,8 +30,6 @@ private string _name;
 
         public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
 
-        public string  Type;
-        public double Degree;
         private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
 
         //public event PropertyChangedEventHandler PropertyChanged;
@@ -45,6 +46,7 @@ private string _name;
 
         }
 
+        public SpaceObject(string type, string name, SpaceObject parent, int size, int distance, double degree)
         public SpaceObject(string name) : base(name)
         {
         }
@@ -55,7 +57,13 @@ private string _name;
             Degree = degree;
             Size = size;
             Distance = distance;
-            //Name = name;
+            Name = name;
+            _parent = parent;
+        }
+
+        public SpaceObject()
+        {
+
         }
 
         public SpaceObject(string type, string name, int x, int y, int size) : base(name)
@@ -65,6 +73,14 @@ private string _name;
             Y = y;
             Size = size;
             //Name = name;
+        }
+
+        public void Move(float speed)
+        {
+            this.X = (int)((this.Distance * Math.Cos(Degree)) + _parent.X + _parent.Size / 3);
+            this.Y = (int)((this.Distance * Math.Sin(Degree)) + _parent.Y + _parent.Size / 3);
+
+            Degree = (Degree + (float)Math.PI / 100 * speed);
         }
     }
 }
