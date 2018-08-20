@@ -1,6 +1,7 @@
 ﻿using ClassLibrary;
 using Library_Solarsystem;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -10,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 //using System.Web.Script.Serialization;
 
-namespace   WPF
+namespace WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -44,17 +45,21 @@ namespace   WPF
                     }
                 }
             }
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            LoadSystemList();
             Grid_Loaded(null, null);
+            
         }
 
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SaveSystemList();
-            
+
             using (var c = new HttpClient() { })
             {
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));// /{combo.SelectedValue}
@@ -76,7 +81,7 @@ namespace   WPF
                     //    outputFile.Write(await response.Content.ReadAsStringAsync());
                     //}
                 }
-                
+
                 //treeView.Items.Clear();
                 //CreateTreeView();
             }
@@ -97,17 +102,33 @@ namespace   WPF
             }
         }
 
+        public async void LoadSystemList()
+        {
+            string jsonText = File.ReadAllText("../../../jsonSolarsystems.txt");
+            //JObject jObject = JObject.Parse(jsonText);
+            var solarsystemsFile = Newtonsoft.Json.JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+
+            using (var c = new HttpClient() { })
+            {
+                var response = await c.PostAsJsonAsync(new Uri($"http://localhost:59306/api/values"), solarsystemsFile);
+
+                //StringContent queryString = new StringContent(jsonText);
+                //HttpResponseMessage response = await c.PostAsync(new Uri($"http://localhost:59306/api/values"), queryString);
+            }
+        }
+
         public void CreateTreeView()
         {
             TreeViewItem treeViewItem = new TreeViewItem();
             treeViewItem.Header = combo.SelectedValue.ToString();
             treeView.Items.Add(treeViewItem);
+
+
+            //public static ObservableCollection GetData()
+            //{
+            //    ObservableCollection items = new ObservableCollection();
+
+            //}
         }
-
-        //public static ObservableCollection GetData()
-        //{
-        //    ObservableCollection items = new ObservableCollection();
-
-        //}
     }
 }

@@ -13,6 +13,7 @@ namespace SolarSystem.Controllers
     public class ValuesController : Controller
     {
         //Galaxy galaxy = new Galaxy();
+        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
         public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
             new Solarsystem("Erdsystem") { Name = "Erdsystem",
                 ListPlanets = {
@@ -66,8 +67,9 @@ namespace SolarSystem.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]ObservableCollection<Solarsystem> value)
         {
+            _sunsystems = value;
         }
 
         // PUT api/values/5
