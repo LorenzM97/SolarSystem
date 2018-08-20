@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\Library_Solarsystem.csproj" />
+    <ProjectReference Include="..\WPF\Client_Solarsystem.csproj" />
   </ItemGroup>
 
 </Project>

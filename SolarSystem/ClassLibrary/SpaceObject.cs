@@ -13,11 +13,14 @@ namespace ClassLibrary
         public int Y;
         public int Size;
         public int Distance;
-//        {
-//            get => Distance;
-//            set { Distance = value; Changed<int>("Distance", value); }
-//}
-private string _name;
+        public double Degree;
+        public string Type;
+        public SpaceObject _parent;
+        //        {
+        //            get => Distance;
+        //            set { Distance = value; Changed<int>("Distance", value); }
+        //}
+        private string _name;
 
         //public string Name
         //{
@@ -27,9 +30,8 @@ private string _name;
 
         public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
 
-        public string  Type;
-        public double Degree;
         private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
+       
 
         //public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,26 +47,51 @@ private string _name;
 
         }
 
-        public SpaceObject(string name) : base(name)
-        {
-        }
-
-        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)
+       
+        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)       //Planet, Moon
         {
             Type = type;
             Degree = degree;
             Size = size;
             Distance = distance;
-            //Name = name;
+            Name = name;
         }
 
-        public SpaceObject(string type, string name, int x, int y, int size) : base(name)
+
+        public SpaceObject(string type, string name, int x, int y, int size) : base(name)       //Sun
         {
             Type = type;
             X = x;
             Y = y;
             Size = size;
-            //Name = name;
         }
+
+        public SpaceObject(string type, string name, int size)      //Sun
+        {
+            Type = type;
+            Name = name;
+            Size = size;
+        }
+
+        public void Move(float speed)
+        {
+            this.X = (int)((this.Distance * Math.Cos(Degree)) + _parent.X + _parent.Size / 3);
+            this.Y = (int)((this.Distance * Math.Sin(Degree)) + _parent.Y + _parent.Size / 3);
+
+            Degree = (Degree + (float)Math.PI / 100 * speed);
+        }
+
+        public void Move(float speed, List<SpaceObject> list)
+        {
+            foreach(var item in list)
+            {
+                item.X = (int)((item.Distance * Math.Cos(item.Degree)) + this.X + this.Size / 3);
+                item.Y = (int)((item.Distance * Math.Sin(item.Degree)) + this.Y + this.Size / 3);
+
+                item.Degree = (item.Degree + (float)Math.PI / 100 * speed);
+
+            }
+        }
+
     }
 }
