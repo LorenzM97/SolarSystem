@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
-using ClassLibrary;
+using System.Net.Http;
+using System.IO;
 using Library_Solarsystem;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace SolarSystem.Controllers
 {
@@ -13,47 +14,57 @@ namespace SolarSystem.Controllers
     public class ValuesController : Controller
     {
         //Galaxy galaxy = new Galaxy();
-        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
-        public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
-            new Solarsystem("Erdsystem") { Name = "Erdsystem",
-                ListPlanets = {
-                    new SpaceObject("planet", "Venus", 20, 20, 0) {
-                        ListMoons = {
-                            new SpaceObject("Mond1") { Name = "m1" },
-                            new SpaceObject("Mond2") { Name = "m2" }
-                        }
-                    },
-                    new SpaceObject("planet", "earth", 10, 30, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m3" }
-                        }
-                    }
-                }
-            },
-            new Solarsystem("Alpha Centauri") {
-                ListPlanets = {
-                    new SpaceObject("planet", "XAMK", 20, 20, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m1" },
-                            new SpaceObject() { Name = "m2" }
-                        }
-                    },
-                    new SpaceObject("planet", "asf", 10, 30, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m3" }
-                        }
-                    }
-                }
-            },
-            new Solarsystem("Proxima Centauri")
-        };
+        public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
+        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
+        //    new Solarsystem("Erdsystem") { Name = "Erdsystem",
+        //        ListPlanets = {
+        //            new SpaceObject("planet", "Venus", 20, 20, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject("Mond1") { Name = "m1" },
+        //                    new SpaceObject("Mond2") { Name = "m2" }
+        //                }
+        //            },
+        //            new SpaceObject("planet", "earth", 10, 30, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m3" }
+        //                }
+        //            }
+        //        }
+        //    },
+        //    new Solarsystem("Alpha Centauri") {
+        //        ListPlanets = {
+        //            new SpaceObject("planet", "XAMK", 20, 20, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m1" },
+        //                    new SpaceObject() { Name = "m2" }
+        //                }
+        //            },
+        //            new SpaceObject("planet", "asf", 10, 30, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m3" }
+        //                }
+        //            }
+        //        }
+        //    },
+        //    new Solarsystem("Proxima Centauri")
+        //};
+
+        public ValuesController()
+        {
+            
+        }
+
+        public void LoadSystemList()
+        {
+            string jsonText = System.IO.File.ReadAllText("../jsonSolarsystems.txt");
+            _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+        }
 
         // GET api/values
         [HttpGet]
         public IEnumerable<Solarsystem> Get()
         {
-            //galaxy.ListSystems = _sunsystems;
-            //return from a in _sunsystems select a.Name;
+            LoadSystemList();
             
             return _sunsystems;
         }
