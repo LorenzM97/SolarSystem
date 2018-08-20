@@ -9,24 +9,46 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Solarsystem", "WPF\C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library_Solarsystem", "ClassLibrary\Library_Solarsystem.csproj", "{422AD73C-302A-466A-9456-ACBF3B92B874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monogame", "..\..\..\repos\FirstSolarSystem\FirstSolarSystem\Monogame.csproj", "{68032C32-460C-42B7-8873-85FAA20ACC9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Debug|x86.Build.0 = Debug|Any CPU
 		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0C1C62F-CAD2-49BE-9503-6CC8D3FABC9A}.Release|x86.Build.0 = Release|Any CPU
 		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Debug|x86.Build.0 = Debug|Any CPU
 		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1FFF77F-DC1A-44FF-9EF2-7538F2BC589C}.Release|x86.Build.0 = Release|Any CPU
 		{422AD73C-302A-466A-9456-ACBF3B92B874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{422AD73C-302A-466A-9456-ACBF3B92B874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422AD73C-302A-466A-9456-ACBF3B92B874}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{422AD73C-302A-466A-9456-ACBF3B92B874}.Debug|x86.Build.0 = Debug|Any CPU
 		{422AD73C-302A-466A-9456-ACBF3B92B874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{422AD73C-302A-466A-9456-ACBF3B92B874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422AD73C-302A-466A-9456-ACBF3B92B874}.Release|x86.ActiveCfg = Release|Any CPU
+		{422AD73C-302A-466A-9456-ACBF3B92B874}.Release|x86.Build.0 = Release|Any CPU
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Debug|x86.ActiveCfg = Debug|x86
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Debug|x86.Build.0 = Debug|x86
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Release|Any CPU.ActiveCfg = Release|x86
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Release|x86.ActiveCfg = Release|x86
+		{68032C32-460C-42B7-8873-85FAA20ACC9C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
