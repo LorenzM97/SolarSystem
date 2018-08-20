@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
-using ClassLibrary;
+using System.Net.Http;
+using System.IO;
 using Library_Solarsystem;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace SolarSystem.Controllers
 {
@@ -56,9 +57,8 @@ namespace SolarSystem.Controllers
         [HttpGet]
         public IEnumerable<Solarsystem> Get()
         {
-            //galaxy.ListSystems = _sunsystems;
-            //return from a in _sunsystems select a.Name;
-
+            LoadSystemList();
+            
             return _sunsystems;
         }
 
