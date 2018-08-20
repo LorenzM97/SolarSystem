@@ -73,25 +73,23 @@ namespace ClassLibrary
             Size = size;
         }
 
-        public void Move(float speed)
+        public void Move(float speed, int middleWidth, int middleHeight)
         {
-            this.X = (int)((this.Distance * Math.Cos(Degree)) + _parent.X + _parent.Size / 3);
-            this.Y = (int)((this.Distance * Math.Sin(Degree)) + _parent.Y + _parent.Size / 3);
+            this.X = (int)((this.Distance * Math.Cos(Degree)) + middleWidth);
+            this.Y = (int)((this.Distance * Math.Sin(Degree)) + middleHeight);
 
             Degree = (Degree + (float)Math.PI / 100 * speed);
-        }
 
-        public void Move(float speed, List<SpaceObject> list)
-        {
-            foreach(var item in list)
+            foreach(var item in ListMoons)
             {
                 item.X = (int)((item.Distance * Math.Cos(item.Degree)) + this.X + this.Size / 3);
                 item.Y = (int)((item.Distance * Math.Sin(item.Degree)) + this.Y + this.Size / 3);
 
                 item.Degree = (item.Degree + (float)Math.PI / 100 * speed);
-
             }
         }
+
+       
 
     }
 }
