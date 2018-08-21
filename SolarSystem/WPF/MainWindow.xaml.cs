@@ -53,7 +53,8 @@ namespace WPF
 
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SaveSystemList();
+            //SaveSystemList();
+            
 
             using (var c = new HttpClient() { })
             {
@@ -63,6 +64,8 @@ namespace WPF
                     this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();
                 }
             }
+
+            LoadSystemList();
         }
 
         public async void SaveSystemList()
@@ -72,10 +75,18 @@ namespace WPF
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values"));
                 if (response.IsSuccessStatusCode)
                 {
-                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
+                    try
                     {
-                        outputFile.Write(await response.Content.ReadAsStringAsync());
+                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
+                        {
+                            outputFile.Write(await response.Content.ReadAsStringAsync());
+                        }
                     }
+                    catch (Exception e)
+                    {
+                        SaveSystemList();
+                    }
+                    
                 }
             }
         }
@@ -91,16 +102,13 @@ namespace WPF
             }
         }
 
-        public void CreateTreeView()
-        {
-            TreeViewItem treeViewItem = new TreeViewItem();
-            treeViewItem.Header = combo.SelectedValue.ToString();
-            treeView.Items.Add(treeViewItem);
-        }
-
         private void AddMoon(object sender, RoutedEventArgs e)
         {
-            TreeViewItem tVItem = treeView.SelectedItem as TreeViewItem;
+            //var tVitemPos = treeView.Items.CurrentPosition;
+            //var tVItem = treeView.Items.GetItemAt(tVitemPos) as TreeViewItem;
+            
+            
+            //string name = tVItem.Name;
         }
 
         private void AddSystem(object sender, RoutedEventArgs e)
@@ -109,6 +117,11 @@ namespace WPF
 
         private void AddPlanet(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSystemList();
         }
     }
 }

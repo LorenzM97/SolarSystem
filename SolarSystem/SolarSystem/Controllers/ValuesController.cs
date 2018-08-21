@@ -52,18 +52,11 @@ namespace SolarSystem.Controllers
         //};
 
 
-
-        //public ValuesController()
-        //{
-
-        //}
-
         // GET api/values
         [HttpGet]
         public IEnumerable<Solarsystem> Get()
         {
             LoadSystemList();
-            
             return _sunsystems;
         }
 
@@ -71,6 +64,7 @@ namespace SolarSystem.Controllers
         [HttpGet("{id}")]
         public Solarsystem Get(string id)
         {
+            LoadSystemList();
             return (from a in _sunsystems where a.Name == id select a).First();
         }
 
