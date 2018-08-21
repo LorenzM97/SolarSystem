@@ -54,7 +54,7 @@ namespace WPF
 
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SaveSystemList();
+            //SaveSystemList();
             
 
             using (var c = new HttpClient() { })
@@ -76,10 +76,18 @@ namespace WPF
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values"));
                 if (response.IsSuccessStatusCode)
                 {
-                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
+                    try
                     {
-                        outputFile.Write(await response.Content.ReadAsStringAsync());
+                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
+                        {
+                            outputFile.Write(await response.Content.ReadAsStringAsync());
+                        }
                     }
+                    catch (Exception e)
+                    {
+                        SaveSystemList();
+                    }
+                    
                 }
             }
         }
@@ -97,8 +105,8 @@ namespace WPF
 
         private void AddMoon(object sender, RoutedEventArgs e)
         {
-            var tVitemPos = treeView.Items.CurrentPosition;
-            var tVItem = treeView.Items.GetItemAt(tVitemPos) as TreeViewItem;
+            //var tVitemPos = treeView.Items.CurrentPosition;
+            //var tVItem = treeView.Items.GetItemAt(tVitemPos) as TreeViewItem;
             
             
             //string name = tVItem.Name;
@@ -110,6 +118,11 @@ namespace WPF
 
         private void AddPlanet(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            SaveSystemList();
         }
     }
 }

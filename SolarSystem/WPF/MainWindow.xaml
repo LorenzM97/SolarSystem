@@ -16,6 +16,7 @@
             <RowDefinition Height="61*" />
             <RowDefinition Height="115*" />
             <RowDefinition Height="190*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
 
 
@@ -31,7 +32,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Column="0" Width="Auto" HorizontalAlignment="Left" Click="AddSystem">
+            <Button Grid.Column="0" Width="Auto" HorizontalAlignment="Stretch" Click="AddSystem">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -39,9 +40,10 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add Sys
+                </Button.Background>
+                <TextBlock TextAlignment="Center">Add<LineBreak/>System</TextBlock>
             </Button>
-            <Button Grid.Column="1" Width="Auto" HorizontalAlignment="Left" >
+            <Button Grid.Column="1" Width="Auto" HorizontalAlignment="Stretch" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -49,9 +51,10 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add sun
+                </Button.Background>
+                <TextBlock TextAlignment="Center">Add<LineBreak/>Sun</TextBlock>
             </Button>
-            <Button Grid.Column="2" Width="Auto" HorizontalAlignment="Right" Click="AddPlanet">
+            <Button Grid.Column="2" Width="Auto" HorizontalAlignment="Stretch" Click="AddPlanet">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -59,9 +62,10 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add Plan
+                </Button.Background>
+                <TextBlock TextAlignment="Center">Add<LineBreak/>Planet</TextBlock>
             </Button>
-            <Button Grid.Column="3" Width="Auto" HorizontalAlignment="Right" Click="AddMoon">
+            <Button Grid.Column="3" HorizontalAlignment="Stretch" Click="AddMoon" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -69,7 +73,8 @@
                         <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
-                </Button.Background> Add moon
+                </Button.Background>
+                <TextBlock TextAlignment="Center">Add<LineBreak/>Moon</TextBlock>
             </Button>
         </Grid>
 
@@ -92,6 +97,19 @@
 
 
         </TreeView>
+
+        <Button Grid.Row="5" HorizontalAlignment="Stretch" Click="SaveChanges_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF5752C9" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <TextBlock TextAlignment="Center"><Bold>SAVE CHANGES</Bold></TextBlock>
+        </Button>
+        
         <Grid Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.5,0.51" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="121*" />
@@ -132,5 +150,5 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-      </Grid>
+    </Grid>
 </Window>
