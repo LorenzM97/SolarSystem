@@ -56,7 +56,6 @@ namespace WPF
         {
             //SaveSystemList();
             
-
             using (var c = new HttpClient() { })
             {
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));
@@ -83,11 +82,10 @@ namespace WPF
                             outputFile.Write(await response.Content.ReadAsStringAsync());
                         }
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         SaveSystemList();
                     }
-                    
                 }
             }
         }
@@ -123,6 +121,7 @@ namespace WPF
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
             SaveSystemList();
+            Debug.WriteLine(Solarsystems[0]);
         }
     }
 }
