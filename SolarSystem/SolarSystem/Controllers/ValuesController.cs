@@ -14,42 +14,42 @@ namespace SolarSystem.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
+        public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>();
 
 
-        public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
-            new Solarsystem("Erdsystem") { Name = "Erdsystem",
-                ListPlanets = {
-                    new SpaceObject("planet", "Venus", 20, 20, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m1" },
-                            new SpaceObject() { Name = "m2" }
-                        }
-                    },
-                    new SpaceObject("planet", "earth", 10, 30, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m3" }
-                        }
-                    }
-                }
-            },
-            new Solarsystem("Alpha Centauri") {
-                ListPlanets = {
-                    new SpaceObject("planet", "XAMK", 20, 20, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m1" },
-                            new SpaceObject() { Name = "m2" }
-                        }
-                    },
-                    new SpaceObject("planet", "asf", 10, 30, 0) {
-                        ListMoons = {
-                            new SpaceObject() { Name = "m3" }
-                        }
-                    }
-                }
-            },
-            new Solarsystem("Proxima Centauri")
-        };
+        //public ObservableCollection<Solarsystem> _sunsystems = new ObservableCollection<Solarsystem>() {
+        //    new Solarsystem("Erdsystem") { Name = "Erdsystem",
+        //        ListPlanets = {
+        //            new SpaceObject("planet", "Venus", 20, 20, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m1" },
+        //                    new SpaceObject() { Name = "m2" }
+        //                }
+        //            },
+        //            new SpaceObject("planet", "earth", 10, 30, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m3" }
+        //                }
+        //            }
+        //        }
+        //    },
+        //    new Solarsystem("Alpha Centauri") {
+        //        ListPlanets = {
+        //            new SpaceObject("planet", "XAMK", 20, 20, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m1" },
+        //                    new SpaceObject() { Name = "m2" }
+        //                }
+        //            },
+        //            new SpaceObject("planet", "asf", 10, 30, 0) {
+        //                ListMoons = {
+        //                    new SpaceObject() { Name = "m3" }
+        //                }
+        //            }
+        //        }
+        //    },
+        //    new Solarsystem("Proxima Centauri")
+        //};
 
 
 
