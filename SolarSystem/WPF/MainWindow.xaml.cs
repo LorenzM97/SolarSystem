@@ -55,6 +55,7 @@ namespace WPF
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SaveSystemList();
+            
 
             using (var c = new HttpClient() { })
             {
@@ -64,6 +65,8 @@ namespace WPF
                     this.DataContext = await response.Content.ReadAsAsync<Solarsystem>();
                 }
             }
+
+            LoadSystemList();
         }
 
         public async void SaveSystemList()
@@ -92,16 +95,13 @@ namespace WPF
             }
         }
 
-        public void CreateTreeView()
-        {
-            TreeViewItem treeViewItem = new TreeViewItem();
-            treeViewItem.Header = combo.SelectedValue.ToString();
-            treeView.Items.Add(treeViewItem);
-        }
-
         private void AddMoon(object sender, RoutedEventArgs e)
         {
-            TreeViewItem tVItem = treeView.SelectedItem as TreeViewItem;
+            var tVitemPos = treeView.Items.CurrentPosition;
+            var tVItem = treeView.Items.GetItemAt(tVitemPos) as TreeViewItem;
+            
+            
+            //string name = tVItem.Name;
         }
 
         private void AddSystem(object sender, RoutedEventArgs e)
