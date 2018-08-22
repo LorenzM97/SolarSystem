@@ -72,6 +72,7 @@ namespace SolarSystem.Controllers
         public void Post([FromBody]ObservableCollection<Solarsystem> value)
         {
             _sunsystems = value;
+            //SaveSystemList();
         }
 
         // PUT api/values/5
@@ -86,10 +87,48 @@ namespace SolarSystem.Controllers
         {
         }
 
-        public void LoadSystemList()
+        private void LoadSystemList()
         {
-            string jsonText = System.IO.File.ReadAllText("../jsonSolarsystems.txt");
-            _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+            try
+            {
+                try
+                {
+                    string jsonText = System.IO.File.ReadAllText("../jsonSolarsystems.txt");
+                    _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+                }
+                catch (Exception)
+                {
+                    string jsonText = System.IO.File.ReadAllText("../jsonSolarsystemsSicherung.txt");
+                    _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+                }
+            }
+            catch (Exception)
+            {
+                LoadSystemList();
+            }
+        }
+
+        private async void SaveSystemList()
+        {
+            using (var c = new HttpClient() { })
+            {
+                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values"));
+                if (response.IsSuccessStatusCode)
+                {
+                    try
+                    {
+                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../", "jsonSolarsystems.txt")))
+                        {
+                            outputFile.Write(await response.Content.ReadAsStringAsync());
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        SaveSystemList();
+                    }
+
+                }
+            }
         }
     }
 }
