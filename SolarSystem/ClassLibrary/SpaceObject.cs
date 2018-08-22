@@ -20,7 +20,6 @@ namespace Library_Solarsystem
         //            get => Distance;
         //            set { Distance = value; Changed<int>("Distance", value); }
         //}
-        private string _name;
 
 
 
@@ -96,7 +95,7 @@ namespace Library_Solarsystem
             this.X = (int)((Distance * Math.Cos(Degree)) + Parent.X);
             this.Y = (int)((Distance * Math.Sin(Degree)) + Parent.Y);
 
-            Degree = (Degree + (float)Math.PI / 100 * speed);
+            Degree = (Degree - (float)Math.PI / 100 * speed);
         }
 
 

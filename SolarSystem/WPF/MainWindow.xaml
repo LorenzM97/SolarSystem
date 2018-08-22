@@ -74,7 +74,7 @@
                         <GradientStop Color="#FF5752C9" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
-                <TextBlock TextAlignment="Center">Add<LineBreak/>Moon</TextBlock>
+                <TextBlock x:Name="btnMoon1" TextAlignment="Center">Add<LineBreak/>Moon</TextBlock>
             </Button>
         </Grid>
 <!-- Test -->
