@@ -65,7 +65,7 @@
                 </Button.Background>
                 <TextBlock TextAlignment="Center">Add<LineBreak/>Planet</TextBlock>
             </Button>
-            <Button Name="btnMoon" Grid.Column="3" HorizontalAlignment="Stretch" Click="AddMoon" >
+            <Button x:Name="btnMoon" Grid.Column="3" HorizontalAlignment="Stretch" Click="AddMoon" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -77,7 +77,7 @@
                 <TextBlock TextAlignment="Center">Add<LineBreak/>Moon</TextBlock>
             </Button>
         </Grid>
-
+<!-- Test -->
         <TreeView x:Name="treeView" Grid.Row="2" ItemsSource="{Binding ListPlanets}" Grid.RowSpan="2" SelectedItemChanged="treeView_SelectedItemChanged" >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=ListMoons}">
