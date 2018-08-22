@@ -65,7 +65,7 @@
                 </Button.Background>
                 <TextBlock TextAlignment="Center">Add<LineBreak/>Planet</TextBlock>
             </Button>
-            <Button Grid.Column="3" HorizontalAlignment="Stretch" Click="AddMoon" >
+            <Button Name="btnMoon" Grid.Column="3" HorizontalAlignment="Stretch" Click="AddMoon" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -78,7 +78,7 @@
             </Button>
         </Grid>
 
-        <TreeView x:Name="treeView" Grid.Row="2" ItemsSource="{Binding ListPlanets}" Grid.RowSpan="2" >
+        <TreeView x:Name="treeView" Grid.Row="2" ItemsSource="{Binding ListPlanets}" Grid.RowSpan="2" SelectedItemChanged="treeView_SelectedItemChanged" >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=ListMoons}">
                     <TextBlock FontWeight="Bold" Text="{Binding Name}"/>
@@ -120,13 +120,16 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Name" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="42" Foreground="White"></Label>
+            <Label Grid.Row="0" Grid.Column="0" Content="Name" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="26" Width="42" Foreground="White"></Label>
             <Label Grid.Row="1" Grid.Column="0" Content="Distance
-                   " HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="59" Foreground="#FFFDFDFD"></Label>
-            <Label Grid.Row="2" Grid.Column="0" Content="Winkel" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="46" Foreground="White"></Label>
-            <Label Grid.Row="1" Grid.Column="1" Content="x:" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="18"></Label>
-            <TextBox x:Name="tBName" Grid.Column="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  Text="{Binding SelectedValue.Name, ElementName=treeView, Mode=TwoWay}"  VerticalAlignment="Top" Width="120">
+                   " HorizontalAlignment="Right"  VerticalAlignment="Top" Height="26" Width="59" Foreground="#FFFDFDFD"></Label>
+            <Label Grid.Row="2" Grid.Column="0" Content="Winkel" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="26" Width="46" Foreground="White"></Label>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Size" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="26" Width="46" Foreground="White"></Label>
+            <Label Grid.Row="1" Grid.Column="0" Content="x:" HorizontalAlignment="Left"  VerticalAlignment="Top" Visibility="Hidden" Height="26" Width="18"></Label>
+            <TextBox x:Name="tBName" Grid.Column="2" Grid.Row="0" Height="22" TextWrapping="Wrap"  Text="{Binding SelectedValue.Name, ElementName=treeView, Mode=TwoWay}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -135,8 +138,9 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <TextBox x:Name="tBDistance" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="tbAngle" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tBDistance" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding SelectedValue.Distance, ElementName=treeView, Mode=TwoWay}" VerticalAlignment="Top" Width="60"/>
+            <TextBox x:Name="tbAngle" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding SelectedValue.Degree, ElementName=treeView, Mode=TwoWay}"  VerticalAlignment="Top" Width="60"/>
+            <TextBox x:Name="tbSize" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding SelectedValue.Size, ElementName=treeView, Mode=TwoWay}"  VerticalAlignment="Top" Width="60"/>
 
 
         </Grid>

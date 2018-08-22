@@ -92,8 +92,16 @@ namespace SolarSystem.Controllers
         {
             try
             {
-                string jsonText = System.IO.File.ReadAllText("../jsonSolarsystems.txt");
-                _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+                try
+                {
+                    string jsonText = System.IO.File.ReadAllText("../jsonSolarsystems.txt");
+                    _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+                }
+                catch (Exception)
+                {
+                    string jsonText = System.IO.File.ReadAllText("../jsonSolarsystemsSicherung.txt");
+                    _sunsystems = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+                }
             }
             catch (Exception)
             {

@@ -54,8 +54,6 @@ namespace WPF
 
         private async void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //SaveSystemList();
-            
             using (var c = new HttpClient() { })
             {
                 HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values/{combo.SelectedValue}"));
@@ -68,32 +66,38 @@ namespace WPF
             LoadSystemList();
         }
 
-        public async void SaveSystemList()
+        public void SaveSystemList()
         {
-            using (var c = new HttpClient() { })
+            try
             {
-                HttpResponseMessage response = await c.GetAsync(new Uri($"http://localhost:59306/api/values"));
-                if (response.IsSuccessStatusCode)
+                using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
                 {
-                    try
-                    {
-                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine("../../../", "jsonSolarsystems.txt")))
-                        {
-                            outputFile.Write(await response.Content.ReadAsStringAsync());
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        SaveSystemList();
-                    }
-                }
+                    solarsystemsFile[combo.SelectedIndex] = (Solarsystem) DataContext;
+                    Debug.WriteLine("DataContexSolar: " + JsonConvert.SerializeObject(DataContext));
+                    outputFile.Write(JsonConvert.SerializeObject(solarsystemsFile));
+                }   //DataBinding läuft net Distance nicht in DataContext
             }
+            catch (Exception)
+            {
+                SaveSystemList();
+            }
+
+            Debug.WriteLine("ComboIndex: " + solarsystemsFile[combo.SelectedIndex].ListPlanets[0].Name);
         }
 
+        ObservableCollection<Solarsystem> solarsystemsFile;
         public async void LoadSystemList()
         {
-            string jsonText = File.ReadAllText("../../../jsonSolarsystems.txt");
-            var solarsystemsFile = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+            try
+            {
+                string jsonText = File.ReadAllText("../../../jsonSolarsystems.txt");
+                solarsystemsFile = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+            }
+            catch (Exception)
+            {
+                string jsonText = File.ReadAllText("../../../jsonSolarsystemsSicherung.txt");
+                solarsystemsFile = JsonConvert.DeserializeObject<ObservableCollection<Solarsystem>>(jsonText);
+            }
 
             using (var c = new HttpClient() { })
             {
@@ -112,16 +116,37 @@ namespace WPF
 
         private void AddSystem(object sender, RoutedEventArgs e)
         {
+
         }
 
         private void AddPlanet(object sender, RoutedEventArgs e)
         {
+            var tVItem = treeView.SelectedItem as SpaceObject;
+            if (tVItem.Type != "moon")
+            {
+                var spaceObj = new SpaceObject("planet", "new Planet", 0, 0, 0);
+                solarsystemsFile[combo.SelectedIndex].ListPlanets.Add(spaceObj);
+
+                //TreeViewItem treeViewItem = treeView.SelectedItem as TreeViewItem;
+                var item = new TreeViewItem();
+                item.Header = spaceObj.Name;
+                //treeView.Items.Add(item);
+            }
         }
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
             SaveSystemList();
-            Debug.WriteLine(Solarsystems[0]);
+        }
+
+        private void treeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            btnMoon.IsEnabled = true;
+            var tVItem = treeView.SelectedItem as SpaceObject;
+            if (tVItem.Type == "moon")
+            {
+                btnMoon.IsEnabled = false;
+            }
         }
     }
 }
