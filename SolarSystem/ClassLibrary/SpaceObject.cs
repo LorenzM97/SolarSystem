@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
-namespace ClassLibrary
+namespace Library_Solarsystem
 {
     public class SpaceObject : Solarsystem, INotifyPropertyChanged
     {
@@ -15,7 +15,7 @@ namespace ClassLibrary
         public int Distance;
         public double Degree;
         public string Type;
-        public SpaceObject _parent;
+        public SpaceObject Parent;
         //        {
         //            get => Distance;
         //            set { Distance = value; Changed<int>("Distance", value); }
@@ -48,13 +48,23 @@ namespace ClassLibrary
         }
 
        
-        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)       //Planet, Moon
+        public SpaceObject(string type, string name, int size, int distance, double degree) : base (name)       //Planet
         {
             Type = type;
             Degree = degree;
             Size = size;
             Distance = distance;
             Name = name;
+        }
+
+        public SpaceObject(string type, string name, SpaceObject parent, int size, int distance, double degree) : base(name)       //Moon
+        {
+            Type = type;
+            Degree = degree;
+            Size = size;
+            Distance = distance;
+            Name = name;
+            Parent = parent;
         }
 
 
@@ -66,8 +76,10 @@ namespace ClassLibrary
             Size = size;
         }
 
-        public SpaceObject(string type, string name, int size)      //Sun
+        public SpaceObject(int x, int y,string type, string name, int size)      //Sun
         {
+            X = x;
+            Y = y;
             Type = type;
             Name = name;
             Size = size;
@@ -75,21 +87,20 @@ namespace ClassLibrary
 
         public void Move(float speed, int middleWidth, int middleHeight)
         {
-            this.X = (int)((this.Distance * Math.Cos(Degree)) + middleWidth);
-            this.Y = (int)((this.Distance * Math.Sin(Degree)) + middleHeight);
+            this.X = (int)((Distance * Math.Cos(Degree)) + middleWidth);
+            this.Y = (int)((Distance * Math.Sin(Degree)) + middleHeight);
 
-            Degree = (Degree + (float)Math.PI / 100 * speed);
-
-            foreach(var item in ListMoons)
-            {
-                item.X = (int)((item.Distance * Math.Cos(item.Degree)) + this.X + this.Size / 3);
-                item.Y = (int)((item.Distance * Math.Sin(item.Degree)) + this.Y + this.Size / 3);
-
-                item.Degree = (item.Degree + (float)Math.PI / 100 * speed);
-            }
+            Degree = (Degree + (float)Math.PI / 100 * speed);           
         }
 
-       
+        public void Move(float speed)
+        {
+            this.X = (int)((Distance * Math.Cos(Degree)) + Parent.X);
+            this.Y = (int)((Distance * Math.Sin(Degree)) + Parent.Y);
+
+            Degree = (Degree + (float)Math.PI / 100 * speed);
+        }
+
 
     }
 }

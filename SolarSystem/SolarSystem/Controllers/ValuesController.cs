@@ -7,7 +7,6 @@ using System.IO;
 using Library_Solarsystem;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ClassLibrary;
 
 namespace SolarSystem.Controllers
 {
