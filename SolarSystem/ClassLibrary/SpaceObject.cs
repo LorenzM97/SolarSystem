@@ -87,7 +87,7 @@ namespace Library_Solarsystem
             this.X = (int)((Distance * Math.Cos(Degree)) + middleWidth);
             this.Y = (int)((Distance * Math.Sin(Degree)) + middleHeight);
 
-            Degree = (Degree + (float)Math.PI / 100 * speed);           
+            Degree = (Degree + (float)Math.PI / 100 * (speed / 2));           
         }
 
         public void Move(float speed)
@@ -95,7 +95,7 @@ namespace Library_Solarsystem
             this.X = (int)((Distance * Math.Cos(Degree)) + Parent.X);
             this.Y = (int)((Distance * Math.Sin(Degree)) + Parent.Y);
 
-            Degree = (Degree - (float)Math.PI / 100 * speed);
+            Degree = (Degree - (float)Math.PI / 100 * (speed / 2));
         }
 
 

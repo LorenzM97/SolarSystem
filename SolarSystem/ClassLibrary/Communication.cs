@@ -9,10 +9,9 @@ namespace Library_Solarsystem
 {
     public class Communication
     {
-        public ObservableCollection<SpaceObject> getList()
+        public int getComboIndex()
         {
-            string jsonText = File.ReadAllText("../../../jsonSolarsystems.txt");
-            return JsonConvert.DeserializeObject<ObservableCollection<SpaceObject>>(jsonText);
+            return 0;
         }
     }
 }
