@@ -65,7 +65,7 @@ namespace WPF
             LoadSystemList();
         }
 
-        public void SaveSystemList()
+        public void SaveSystemList(string index)
         {
             try
             {
@@ -75,19 +75,21 @@ namespace WPF
                     Debug.WriteLine("DataContexSolar: " + JsonConvert.SerializeObject(DataContext));
                     outputFile.Write(JsonConvert.SerializeObject(solarsystemsFile));
                 }   //DataBinding läuft net Distance nicht in DataContext
+                using (StreamWriter newTask = new StreamWriter("../../../Index.txt", false))
+                {
+                    newTask.WriteLine(index);
+                }
             }
             catch (Exception)
             {
-                SaveSystemList();
+                SaveSystemList(index);
             }
 
-            using (StreamWriter outputFile2 = new StreamWriter(System.IO.Path.Combine("../../../", "systemIndex.txt")))
-            {
-                outputFile2.Write(combo.SelectedIndex);
-            }
+            //Debug.WriteLine("ComboIndex: " + solarsystemsFile[combo.SelectedIndex].ListPlanets[0].Name);
         }
 
         ObservableCollection<Solarsystem> solarsystemsFile;
+
         public async void LoadSystemList()
         {
             try
@@ -138,7 +140,7 @@ namespace WPF
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            SaveSystemList();
+            SaveSystemList("" + combo.SelectedIndex);
         }
 
         private void treeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
