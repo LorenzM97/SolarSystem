@@ -108,7 +108,7 @@ namespace SolarSystem.Controllers
             }
         }
 
-        private async void SaveSystemList()
+        private async void SaveSystemList(int index)
         {
             using (var c = new HttpClient() { })
             {
@@ -121,10 +121,11 @@ namespace SolarSystem.Controllers
                         {
                             outputFile.Write(await response.Content.ReadAsStringAsync());
                         }
+                        System.IO.File.WriteAllText("../../../../../Index.txt", "" + index);
                     }
                     catch (Exception)
                     {
-                        SaveSystemList();
+                        SaveSystemList(index);
                     }
 
                 }

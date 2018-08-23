@@ -8,9 +8,7 @@ using Newtonsoft.Json;
 
 namespace Monogame
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
+   
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
@@ -33,19 +31,14 @@ namespace Monogame
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+      
         protected override void Initialize()
         {
 
             string jsonText = File.ReadAllText("../../../../../jsonSolarsystems.txt");
             _listTmp = JsonConvert.DeserializeObject<ObservableCollection<SpaceObject>>(jsonText);
-
-            var item = _listTmp[0];
+            string index = File.ReadAllText("../../../../../Index.txt");
+            var item = _listTmp[int.Parse(index)];
             {
                 foreach (var planet in item.ListPlanets)
 
@@ -70,10 +63,7 @@ namespace Monogame
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
+   
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -83,20 +73,13 @@ namespace Monogame
             moon = Content.Load<Texture2D>("Bilder/mond");
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
+
         protected override void UnloadContent()
         {
 
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+       
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -117,15 +100,10 @@ namespace Monogame
 
             
 
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -136,20 +114,17 @@ namespace Monogame
             {
                 if (item.Type == "planet")
                 {
-                   // spriteBatch.Draw(planet, new Rectangle(item.X, item.Y, item.Size, item.Size), Color.White);
                     spriteBatch.Draw(planet, new Vector2(item.X, item.Y), null, Color.White, 0, new Vector2(planet.Width / 2, planet.Height / 2), (float)(1f / item.Size), SpriteEffects.None, 0);
 
                 }
                 else
                     if (item.Type == "sun")
                 {
-                   // spriteBatch.Draw(sun, new Rectangle(item.X, item.Y, item.Size, item.Size), Color.White);
                     spriteBatch.Draw(sun, new Vector2(item.X, item.Y), null, Color.White, 0, new Vector2(sun.Width / 2, sun.Height / 2), (float)(1f / item.Size), SpriteEffects.None, 0);
 
                 }
                 else if (item.Type == "moon")
                 {
-                    //spriteBatch.Draw(moon, new Rectangle(item.X, item.Y, item.Size, item.Size), Color.White);
                     spriteBatch.Draw(moon, new Vector2(item.X, item.Y), null, Color.White, 0, new Vector2(moon.Width / 2, moon.Height / 2), (float) (1f/item.Size) , SpriteEffects.None, 0);
                 }
 
