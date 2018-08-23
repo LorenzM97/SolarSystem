@@ -159,5 +159,10 @@ namespace WPF
 
 
         }
+
+        //private void StartMonogame_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Monogame.Program.Main();
+        //}
     }
 }

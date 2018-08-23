@@ -29,6 +29,7 @@ namespace Monogame
             graphics.PreferredBackBufferHeight = WidthHeight.screenHight;   // set this value to the desired height of your window
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
+            Initialize();
         }
 
       
