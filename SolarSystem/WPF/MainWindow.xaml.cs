@@ -152,5 +152,12 @@ namespace WPF
                 btnMoon.IsEnabled = false;
             }
         }
+
+        private void btnStartGame_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:/Users/a642365/source/SolarSystem/SolarSystem/SolarSystem/MonogameNew/obj/x86/Debug/MonogameNew.exe");
+
+
+        }
     }
 }
