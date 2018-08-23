@@ -111,6 +111,10 @@
       <Project>{422ad73c-302a-466a-9456-acbf3b92b874}</Project>
       <Name>Library_Solarsystem</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MonogameNew\MonogameNew.csproj">
+      <Project>{5f568150-7938-4bb9-b07f-c79240796bad}</Project>
+      <Name>MonogameNew</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Galaxie.png" />

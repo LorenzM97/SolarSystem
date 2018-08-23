@@ -81,7 +81,10 @@ namespace WPF
                 SaveSystemList();
             }
 
-            Debug.WriteLine("ComboIndex: " + solarsystemsFile[combo.SelectedIndex].ListPlanets[0].Name);
+            using (StreamWriter outputFile2 = new StreamWriter(System.IO.Path.Combine("../../../", "systemIndex.txt")))
+            {
+                outputFile2.Write(combo.SelectedIndex);
+            }
         }
 
         ObservableCollection<Solarsystem> solarsystemsFile;
@@ -146,6 +149,11 @@ namespace WPF
             {
                 btnMoon.IsEnabled = false;
             }
+        }
+
+        private void StartMonogame_Click(object sender, RoutedEventArgs e)
+        {
+            Monogame.Program.Main();
         }
     }
 }

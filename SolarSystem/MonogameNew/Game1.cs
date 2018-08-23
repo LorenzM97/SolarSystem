@@ -31,6 +31,7 @@ namespace Monogame
             graphics.PreferredBackBufferHeight = WidthHeight.screenHight;   // set this value to the desired height of your window
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
+            Initialize();
         }
 
         /// <summary>
@@ -44,8 +45,9 @@ namespace Monogame
 
             string jsonText = File.ReadAllText("../../../../../jsonSolarsystems.txt");
             _listTmp = JsonConvert.DeserializeObject<ObservableCollection<SpaceObject>>(jsonText);
-
-            var item = _listTmp[0];
+            var systemIndex1 = File.ReadAllText("../../../../../systemIndex.txt");
+            int systemIndex = 0;    //testzwecke
+            var item = _listTmp[systemIndex];
             {
                 foreach (var planet in item.ListPlanets)
 
