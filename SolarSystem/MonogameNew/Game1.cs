@@ -29,13 +29,11 @@ namespace Monogame
             graphics.PreferredBackBufferHeight = WidthHeight.screenHight;   // set this value to the desired height of your window
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
-            Initialize();
         }
 
       
         protected override void Initialize()
         {
-
             string jsonText = File.ReadAllText("../../../../../jsonSolarsystems.txt");
             _listTmp = JsonConvert.DeserializeObject<ObservableCollection<SpaceObject>>(jsonText);
             string index = File.ReadAllText("../../../../../Index.txt");
@@ -43,24 +41,22 @@ namespace Monogame
             {
                 foreach (var planet in item.ListPlanets)
 
-                    if (planet.Type == "planet")
-                    {
-                        SpaceObject tempPlanet = new SpaceObject(planet.Type, planet.Name, planet.Size, planet.Distance, planet.Degree);
-                        _listSolarSystem.Add(tempPlanet);
+                if (planet.Type == "planet")
+                {
+                    SpaceObject tempPlanet = new SpaceObject(planet.Type, planet.Name, planet.Size, planet.Distance, planet.Degree);
+                    _listSolarSystem.Add(tempPlanet);
 
-                        foreach(var moon in planet.ListMoons)
-                        {
-                            SpaceObject moonTemp = new SpaceObject(moon.Type, moon.Name, tempPlanet, moon.Size, moon.Distance, moon.Degree);
-                            _listSolarSystem.Add(moonTemp);
-                            tempPlanet.ListMoons.Add(moonTemp);
-                        }
-                    } else if(planet.Type == "sun")
+                    foreach(var moon in planet.ListMoons)
                     {
-                        _listSolarSystem.Add(new SpaceObject(WidthHeight.screenWidth/2, WidthHeight.screenHight/2, planet.Type, planet.Name, planet.Size));
-
+                        SpaceObject moonTemp = new SpaceObject(moon.Type, moon.Name, tempPlanet, moon.Size, moon.Distance, moon.Degree);
+                        _listSolarSystem.Add(moonTemp);
+                        tempPlanet.ListMoons.Add(moonTemp);
                     }
+                } else if(planet.Type == "sun")
+                {
+                    _listSolarSystem.Add(new SpaceObject(WidthHeight.screenWidth/2, WidthHeight.screenHight/2, planet.Type, planet.Name, planet.Size));
+                }
             }
-
             base.Initialize();
         }
 
@@ -77,7 +73,6 @@ namespace Monogame
 
         protected override void UnloadContent()
         {
-
         }
 
        
@@ -86,7 +81,6 @@ namespace Monogame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-           
             foreach(var item in _listSolarSystem)
             {
                 if(item.Type == "planet")
@@ -98,10 +92,6 @@ namespace Monogame
                     item.Move(geschwindigkeit);
                 }
             }
-
-            
-
-
             base.Update(gameTime);
         }
 
@@ -128,13 +118,7 @@ namespace Monogame
                 {
                     spriteBatch.Draw(moon, new Vector2(item.X, item.Y), null, Color.White, 0, new Vector2(moon.Width / 2, moon.Height / 2), (float) (1f/item.Size) , SpriteEffects.None, 0);
                 }
-
-
             }
-
-
-
-
             spriteBatch.End();
             base.Draw(gameTime);
         }

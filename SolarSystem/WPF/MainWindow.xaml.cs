@@ -125,6 +125,8 @@ namespace WPF
 
         private void AddPlanet(object sender, RoutedEventArgs e)
         {
+            var treeitem = treeView.SelectedItem as TreeViewItem;
+
             var tVItem = treeView.SelectedItem as SpaceObject;
             if (tVItem.Type != "moon")
             {
@@ -150,12 +152,15 @@ namespace WPF
             if (tVItem.Type == "moon")
             {
                 btnMoon.IsEnabled = false;
+                
             }
         }
 
         private void StartMonogame_Click(object sender, RoutedEventArgs e)
         {
-            Monogame.Program.Main();
+            Process game1 = new Process();
+            game1.StartInfo.FileName = "C:/Users/A675952/source/SolarSystem/SolarSystem/MonogameNew/obj/x86/Release/MonoGameNew.exe";
+            game1.Start();
         }
     }
 }

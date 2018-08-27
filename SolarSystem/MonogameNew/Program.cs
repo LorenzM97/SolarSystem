@@ -16,9 +16,10 @@ namespace Monogame
                 game.Run();
         }
 
-        public void Start()
+        public string returnPath()
         {
-            Main();
+            string folder = Environment.CurrentDirectory;
+            return folder;
         }
     }
 #endif
