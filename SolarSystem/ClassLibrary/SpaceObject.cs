@@ -11,7 +11,7 @@ namespace Library_Solarsystem
     {
         public int X;
         public int Y;
-        public int Size;
+        private int size;
         private int distance;
         private double degree;
         public string Type;
@@ -26,6 +26,8 @@ namespace Library_Solarsystem
         public ObservableCollection<SpaceObject> ListMoons { get => listMoons; set => listMoons = value; }
         public int Distance { get => distance; set { distance = value; Changed2("Distance"); } }
         public double Degree { get => degree; set { degree = value; Changed2("Degree"); } }
+
+        public int Size { get => size; set { size = value; Changed2("Size"); } }
 
         private ObservableCollection<SpaceObject> listMoons = new ObservableCollection<SpaceObject>();
        
