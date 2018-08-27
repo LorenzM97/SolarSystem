@@ -159,13 +159,8 @@ namespace WPF
         private void btnStartGame_Click(object sender, RoutedEventArgs e)
         {
             Process game1 = new Process();
-            game1.StartInfo.FileName = "C:/Users/A675952/source/SolarSystem/SolarSystem/MonogameNew/obj/x86/Release/MonoGameNew.exe";
+            game1.StartInfo.FileName = "../../../MonogameNew/obj/x86/Release/MonoGameNew.exe";
             game1.Start();
         }
-
-        //private void StartMonogame_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Monogame.Program.Main();
-        //}
     }
 }
