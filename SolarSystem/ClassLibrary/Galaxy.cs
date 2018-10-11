@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
+//awesmoe header needed
+
 namespace Library_Solarsystem
 {
     public class Galaxy : INotifyPropertyChanged
