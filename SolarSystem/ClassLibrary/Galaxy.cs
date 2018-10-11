@@ -19,13 +19,13 @@ namespace Library_Solarsystem
 
         protected void Changed<T>(string p, T value)
         {
-            if (PropertyChanged != null)
+            if (PropertyChanged != null) //if the changed Property is not null, the method will be called
                 PropertyChanged(this, new PropertyChangedEventArgs(p));
         }
 
         protected void Changed2(string p)
         {
-            if (PropertyChanged != null)
+            if (PropertyChanged != null) //if the changed Property is not null, the method will be called
                 PropertyChanged(this, new PropertyChangedEventArgs(p));
         }
     }
