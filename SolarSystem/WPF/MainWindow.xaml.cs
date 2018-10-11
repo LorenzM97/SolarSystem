@@ -34,7 +34,7 @@ namespace WPF
             {
                 while (true)
                 {
-                    //System.Threading.Thread.Sleep(500);
+                    //System.Threading.Thread.Sleep(501);
 
                     await Task.Yield();
 
