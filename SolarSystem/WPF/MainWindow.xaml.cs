@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
+//awesmoe header needed
+
 namespace WPF
 {
     public partial class MainWindow : Window
@@ -32,7 +34,7 @@ namespace WPF
             {
                 while (true)
                 {
-                    //System.Threading.Thread.Sleep(500);
+                    //System.Threading.Thread.Sleep(501);
 
                     await Task.Yield();
 
